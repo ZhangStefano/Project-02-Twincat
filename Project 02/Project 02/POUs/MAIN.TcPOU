@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{026c4556-1d08-4f9d-b723-d4cefff0be76}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	nastro: FB_MSF();
+	emg: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+nastro(
+	start:= InputOutput.start, 
+	stop:= InputOutput.stop, 
+	emg:= InputOutput.emg, 
+	ack:= InputOutput.ack, 
+	fc1:= InputOutput.fc1, 
+	fc2:= InputOutput.fc2, 
+	H1=> InputOutput.H1, 
+	HEMG=> InputOutput.HEMG, 
+	M=> InputOutput.M, 
+	libero=> InputOutput.libero);]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="91" Count="10" />
+      <LineId Id="41" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
